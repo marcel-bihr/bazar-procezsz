@@ -1,0 +1,10 @@
+{
+	"birthday": "1981-07-24",
+	"years": [
+		{"year":1999, "income": 3908},
+		{"year":2000, "income": 3908},
+		{"year":2001, "income": 3908},
+		{"year":2002, "income": 3908},
+		{"year":2003, "income": 3908},
+	]
+}
