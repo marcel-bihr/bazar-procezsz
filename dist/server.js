@@ -48,13 +48,14 @@ function calculatePrecautions(yearIncome) {
     if (lastOrdinaryYear > currentYear) {
         lastOrdinaryYear = currentYear;
     }
-    result.averageIncomeSingle = sum / (lastOrdinaryYear - firstOrdinaryYear + 1);
+    result.averageIncomeSingle = Math.round(sum / (lastOrdinaryYear - firstOrdinaryYear + 1));
     // for each year: find all entrie sand sum up, compare to amoutn
     var youthYears = countYouthYears(yearIncome.years, yearIncome.birthday.getFullYear());
     var missingYears = findMissingYears(yearIncome.years, firstOrdinaryYear, lastOrdinaryYear);
     result.missingyears = Math.max(missingYears - youthYears, 0);
     result.consideredYouthYears = youthYears;
     result.lastConsideredYear = lastOrdinaryYear;
+    console.log(JSON.stringify(result));
     return result;
 }
 function findMissingYears(years, firstYear, lastYear) {

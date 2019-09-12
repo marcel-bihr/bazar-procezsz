@@ -57,7 +57,7 @@ function calculatePrecautions(yearIncome: YearIncome): Precaution {
     if (lastOrdinaryYear > currentYear) {
         lastOrdinaryYear= currentYear;
     }
-    result.averageIncomeSingle= sum/(lastOrdinaryYear-firstOrdinaryYear+1);
+    result.averageIncomeSingle= Math.round(sum/(lastOrdinaryYear-firstOrdinaryYear+1));
 
     // for each year: find all entrie sand sum up, compare to amoutn
     const youthYears= countYouthYears(yearIncome.years, yearIncome.birthday.getFullYear());
@@ -65,6 +65,7 @@ function calculatePrecautions(yearIncome: YearIncome): Precaution {
     result.missingyears= Math.max(missingYears-youthYears, 0);
     result.consideredYouthYears= youthYears;
     result.lastConsideredYear= lastOrdinaryYear;
+    console.log(JSON.stringify(result));
     return result;
 }
 
