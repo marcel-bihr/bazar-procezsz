@@ -25,9 +25,6 @@ app.use(express_1.default.json({
     reviver: reviveDates
 }));
 app.use(loggerMiddleware);
-app.get('/hello', function (request, response) {
-    response.send('Hello world!');
-});
 app.post('/calculate', function (request, response) {
     var yearIncome = request.body;
     console.log('bd: ' + yearIncome.birthday + ', years: ' + JSON.stringify(yearIncome.years));

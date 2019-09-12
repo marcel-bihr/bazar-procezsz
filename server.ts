@@ -28,10 +28,6 @@ app.use(express.json( {
 }));
 app.use(loggerMiddleware);
 
-app.get('/hello', (request, response) => {
-    response.send('Hello world!');
-});
-
 app.post('/calculate', (request, response) => {
     const yearIncome: YearIncome = request.body;
     console.log('bd: ' + yearIncome.birthday + ', years: ' + JSON.stringify(yearIncome.years));
