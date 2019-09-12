@@ -56,6 +56,7 @@ function calculatePrecautions(yearIncome) {
     result.consideredYouthYears = youthYears;
     result.lastConsideredYear = lastOrdinaryYear;
     console.log(JSON.stringify(result));
+    console.log('Calculation end' + new Date());
     return result;
 }
 function findMissingYears(years, firstYear, lastYear) {
